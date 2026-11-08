@@ -14,8 +14,8 @@
 
 #include <memory>
 #include <boost/timer.hpp>
-#include <gsl/gsl_assert>
-#include <QDesktopWidget>
+#include <gsl/assert>
+//#include <QDesktopWidget>
 #include <QApplication>
 #include <QKeyEvent>
 #include <QPainter>

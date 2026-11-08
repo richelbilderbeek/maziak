@@ -4,7 +4,11 @@
 #include <iostream>
 #include <iterator>
 #include <sstream>
-#include <gsl/gsl_assert>
+
+// In a terminal, when in the Maziak folder do:
+//
+// git clone https://github.com/microsoft/GSL ../
+#include <gsl/assert>
 
 #include "maziakhelper.h"
 #include "maziakintmaze.h"

@@ -19,7 +19,7 @@ void ribi::maziak::QtInstructionsDialog::showEvent(QShowEvent *)
   for (auto p : { ui->label } )
   {
     p->setPixmap(
-      p->pixmap()->scaled(
+      p->pixmap().scaled(
         p->width(),
         p->height(),
         Qt::KeepAspectRatio, Qt::FastTransformation

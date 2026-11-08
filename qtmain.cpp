@@ -1,6 +1,6 @@
 #include <QApplication>
 #include <QTimer>
-#include <gsl/gsl_assert>
+#include <gsl/assert>
 #include <memory>
 #include "qtmaziakmenudialog.h"
 

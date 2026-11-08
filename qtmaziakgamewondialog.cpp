@@ -60,7 +60,7 @@ void ribi::maziak::QtGameWonDialog::showEvent(QShowEvent *)
   for (auto p : { ui->label_picture, ui->label_text } )
   {
     p->setPixmap(
-      p->pixmap()->scaled(
+      p->pixmap().scaled(
         p->width(),
         p->height(),
         Qt::KeepAspectRatio, Qt::FastTransformation

@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <iterator>
-#include <gsl/gsl_assert>
+#include <gsl/assert>
 #include "maziakcoordinat.h"
 #include "maziakdistancesmaze.h"
 #include "maziakhelper.h"

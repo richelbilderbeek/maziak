@@ -8,7 +8,7 @@
 
 #include <memory>
 
-#include <QDesktopWidget>
+//#include <QDesktopWidget>
 #include <QKeyEvent>
 #include <QPainter>
 #include <QMouseEvent>

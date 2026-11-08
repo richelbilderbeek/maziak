@@ -4,7 +4,7 @@
 #include <iterator>
 #include <numeric>
 #include <random>
-#include <gsl/gsl_assert>
+#include <gsl/assert>
 
 #include "maziakhelper.h"
 
