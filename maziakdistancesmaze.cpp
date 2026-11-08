@@ -103,10 +103,10 @@ std::vector<std::vector<int>> ribi::maziak::CalculateDistances(
       ++distance;
       std::vector<Coordinat> newFound;
 
-      for (const Coordinat c: found)
+      for (const Coordinat& c: found)
       {
         const auto adjacent = get_adjacent_4(c);
-        for (const Coordinat d: adjacent)
+        for (const Coordinat& d: adjacent)
         {
           if (maze.CanGet(d)
             && maze.Get(d) != MazeSquare::wall

@@ -1,66 +1,66 @@
 <RCC>
     <qresource prefix="/maziak">
-        <file>pics/Easy_selected.png</file>
-        <file>pics/Easy_not_selected.png</file>
-        <file>pics/Empty.png</file>
-        <file>pics/Wall.png</file>
-        <file>pics/Path.png</file>
-        <file>pics/PlayerLookDown.png</file>
-        <file>pics/Enemy2.png</file>
-        <file>pics/Enemy1.png</file>
-        <file>pics/Exit.png</file>
-        <file>pics/Sword.png</file>
-        <file>pics/Prisoner2.png</file>
-        <file>pics/Prisoner1.png</file>
-        <file>pics/PlayerLookUp.png</file>
-        <file>pics/FightLost2.png</file>
-        <file>pics/FightLost1.png</file>
-        <file>pics/FightWon2.png</file>
-        <file>pics/FightWon1.png</file>
-        <file>pics/FightSword1.png</file>
-        <file>pics/FightNoSword1.png</file>
-        <file>pics/Fight4.png</file>
-        <file>pics/Fight3.png</file>
-        <file>pics/Fight2.png</file>
-        <file>pics/PlayerWon2.png</file>
-        <file>pics/PlayerWon1.png</file>
-        <file>pics/PlayerWalkUpSword2.png</file>
-        <file>pics/PlayerWalkUpSword1.png</file>
-        <file>pics/PlayerWalkUp2.png</file>
-        <file>pics/PlayerWalkUp1.png</file>
-        <file>pics/PlayerWalkDownSword2.png</file>
-        <file>pics/PlayerWalkDownSword1.png</file>
-        <file>pics/PlayerWalkDown2.png</file>
-        <file>pics/PlayerWalkDown1.png</file>
-        <file>pics/PlayerScared.png</file>
-        <file>pics/PlayerWalkRightSword2.png</file>
-        <file>pics/PlayerWalkRightSword1.png</file>
-        <file>pics/PlayerWalkRight2.png</file>
-        <file>pics/PlayerWalkRight1.png</file>
-        <file>pics/PlayerWalkLeft2.png</file>
-        <file>pics/PlayerWalkLeft1.png</file>
-        <file>pics/PlayerLookRightSword.png</file>
-        <file>pics/PlayerLookRight.png</file>
-        <file>pics/PlayerLookLeftSword.png</file>
-        <file>pics/PlayerLookLeft.png</file>
-        <file>pics/PlayerLookDownSword.png</file>
-        <file>pics/PlayerLookUpSword.png</file>
-        <file>pics/PlayerWalkLeftSword1.png</file>
-        <file>pics/PlayerWalkLeftSword2.png</file>
-        <file>pics/Transparent.png</file>
-        <file>pics/Rip.png</file>
-        <file>pics/Medium_not_selected.png</file>
-        <file>pics/Hard_selected.png</file>
-        <file>pics/Hard_not_selected.png</file>
-        <file>pics/Medium_selected.png</file>
-        <file>pics/Quit.png</file>
-        <file>pics/About.png</file>
-        <file>pics/Instructions.png</file>
-        <file>pics/Start.png</file>
-        <file>pics/InstructionScreen.png</file>
-        <file>pics/GameOver.png</file>
-        <file>pics/AboutPicture.png</file>
-        <file>pics/Congratulations.png</file>
-        <file>pics/R.png</file>
+        <file alias="pics/Easy_selected.png">docs/pics/Easy_selected.png</file>
+        <file alias="pics/Easy_not_selected.png">docs/pics/Easy_not_selected.png</file>
+        <file alias="pics/Empty.png">docs/pics/Empty.png</file>
+        <file alias="pics/Wall.png">docs/pics/Wall.png</file>
+        <file alias="pics/Path.png">docs/pics/Path.png</file>
+        <file alias="pics/PlayerLookDown.png">docs/pics/PlayerLookDown.png</file>
+        <file alias="pics/Enemy2.png">docs/pics/Enemy2.png</file>
+        <file alias="pics/Enemy1.png">docs/pics/Enemy1.png</file>
+        <file alias="pics/Exit.png">docs/pics/Exit.png</file>
+        <file alias="pics/Sword.png">docs/pics/Sword.png</file>
+        <file alias="pics/Prisoner2.png">docs/pics/Prisoner2.png</file>
+        <file alias="pics/Prisoner1.png">docs/pics/Prisoner1.png</file>
+        <file alias="pics/PlayerLookUp.png">docs/pics/PlayerLookUp.png</file>
+        <file alias="pics/FightLost2.png">docs/pics/FightLost2.png</file>
+        <file alias="pics/FightLost1.png">docs/pics/FightLost1.png</file>
+        <file alias="pics/FightWon2.png">docs/pics/FightWon2.png</file>
+        <file alias="pics/FightWon1.png">docs/pics/FightWon1.png</file>
+        <file alias="pics/FightSword1.png">docs/pics/FightSword1.png</file>
+        <file alias="pics/FightNoSword1.png">docs/pics/FightNoSword1.png</file>
+        <file alias="pics/Fight4.png">docs/pics/Fight4.png</file>
+        <file alias="pics/Fight3.png">docs/pics/Fight3.png</file>
+        <file alias="pics/Fight2.png">docs/pics/Fight2.png</file>
+        <file alias="pics/PlayerWon2.png">docs/pics/PlayerWon2.png</file>
+        <file alias="pics/PlayerWon1.png">docs/pics/PlayerWon1.png</file>
+        <file alias="pics/PlayerWalkUpSword2.png">docs/pics/PlayerWalkUpSword2.png</file>
+        <file alias="pics/PlayerWalkUpSword1.png">docs/pics/PlayerWalkUpSword1.png</file>
+        <file alias="pics/PlayerWalkUp2.png">docs/pics/PlayerWalkUp2.png</file>
+        <file alias="pics/PlayerWalkUp1.png">docs/pics/PlayerWalkUp1.png</file>
+        <file alias="pics/PlayerWalkDownSword2.png">docs/pics/PlayerWalkDownSword2.png</file>
+        <file alias="pics/PlayerWalkDownSword1.png">docs/pics/PlayerWalkDownSword1.png</file>
+        <file alias="pics/PlayerWalkDown2.png">docs/pics/PlayerWalkDown2.png</file>
+        <file alias="pics/PlayerWalkDown1.png">docs/pics/PlayerWalkDown1.png</file>
+        <file alias="pics/PlayerScared.png">docs/pics/PlayerScared.png</file>
+        <file alias="pics/PlayerWalkRightSword2.png">docs/pics/PlayerWalkRightSword2.png</file>
+        <file alias="pics/PlayerWalkRightSword1.png">docs/pics/PlayerWalkRightSword1.png</file>
+        <file alias="pics/PlayerWalkRight2.png">docs/pics/PlayerWalkRight2.png</file>
+        <file alias="pics/PlayerWalkRight1.png">docs/pics/PlayerWalkRight1.png</file>
+        <file alias="pics/PlayerWalkLeft2.png">docs/pics/PlayerWalkLeft2.png</file>
+        <file alias="pics/PlayerWalkLeft1.png">docs/pics/PlayerWalkLeft1.png</file>
+        <file alias="pics/PlayerLookRightSword.png">docs/pics/PlayerLookRightSword.png</file>
+        <file alias="pics/PlayerLookRight.png">docs/pics/PlayerLookRight.png</file>
+        <file alias="pics/PlayerLookLeftSword.png">docs/pics/PlayerLookLeftSword.png</file>
+        <file alias="pics/PlayerLookLeft.png">docs/pics/PlayerLookLeft.png</file>
+        <file alias="pics/PlayerLookDownSword.png">docs/pics/PlayerLookDownSword.png</file>
+        <file alias="pics/PlayerLookUpSword.png">docs/pics/PlayerLookUpSword.png</file>
+        <file alias="pics/PlayerWalkLeftSword1.png">docs/pics/PlayerWalkLeftSword1.png</file>
+        <file alias="pics/PlayerWalkLeftSword2.png">docs/pics/PlayerWalkLeftSword2.png</file>
+        <file alias="pics/Transparent.png">docs/pics/Transparent.png</file>
+        <file alias="pics/Rip.png">docs/pics/Rip.png</file>
+        <file alias="pics/Medium_not_selected.png">docs/pics/Medium_not_selected.png</file>
+        <file alias="pics/Hard_selected.png">docs/pics/Hard_selected.png</file>
+        <file alias="pics/Hard_not_selected.png">docs/pics/Hard_not_selected.png</file>
+        <file alias="pics/Medium_selected.png">docs/pics/Medium_selected.png</file>
+        <file alias="pics/Quit.png">docs/pics/Quit.png</file>
+        <file alias="pics/About.png">docs/pics/About.png</file>
+        <file alias="pics/Instructions.png">docs/pics/Instructions.png</file>
+        <file alias="pics/Start.png">docs/pics/Start.png</file>
+        <file alias="pics/InstructionScreen.png">docs/pics/InstructionScreen.png</file>
+        <file alias="pics/GameOver.png">docs/pics/GameOver.png</file>
+        <file alias="pics/AboutPicture.png">docs/pics/AboutPicture.png</file>
+        <file alias="pics/Congratulations.png">docs/pics/Congratulations.png</file>
+        <file alias="pics/R.png">docs/pics/R.png</file>
     </qresource>
 </RCC>

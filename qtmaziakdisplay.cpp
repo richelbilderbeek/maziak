@@ -13,7 +13,6 @@
 #include <vector>
 
 #include <memory>
-#include <boost/timer.hpp>
 //#include <QDesktopWidget>
 #include <QApplication>
 #include <QKeyEvent>

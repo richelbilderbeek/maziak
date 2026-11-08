@@ -9,7 +9,9 @@
 #include <memory>
 
 //#include <QDesktopWidget>
+#include <QGuiApplication>
 #include <QKeyEvent>
+#include <QScreen>
 #include <QPainter>
 #include <QMessageBox>
 #include <QMouseEvent>
@@ -36,7 +38,7 @@ ribi::maziak::QtMenuDialog::QtMenuDialog(
   ui->setupUi(this);
 
   //Put the dialog in the screen's center
-  const QRect screen = QApplication::desktop()->screenGeometry();
+  const QRect screen = QGuiApplication::primaryScreen()->geometry();
   this->move( screen.center() - this->rect().center() );
 }
 
@@ -48,45 +50,45 @@ ribi::maziak::QtMenuDialog::~QtMenuDialog() noexcept
 void ribi::maziak::QtMenuDialog::mousePressEvent(QMouseEvent * event)
 {
   if (ui->widget_easy->geometry().contains(
-    event->x(), event->y()))
+    event->position().toPoint()))
   {
     m_difficulty = Difficulty::easy;
     repaint();
     return;
   }
   if (ui->widget_medium->geometry().contains(
-    event->x(), event->y()))
+    event->position().toPoint()))
   {
     m_difficulty = Difficulty::medium;
     repaint();
     return;
   }
   if (ui->widget_hard->geometry().contains(
-    event->x(), event->y()))
+    event->position().toPoint()))
   {
     m_difficulty = Difficulty::hard;
     repaint();
     return;
   }
   if (ui->widget_start->geometry().contains(
-    event->x(), event->y()))
+    event->position().toPoint()))
   {
     OnStart(); return;
   }
   if (ui->widget_instructions->geometry().contains(
-    event->x(), event->y()))
+    event->position().toPoint()))
   {
     OnInstructions();
     return;
   }
   if (ui->widget_about->geometry().contains(
-    event->x(), event->y()))
+    event->position().toPoint()))
   {
     OnAbout();
     return;
   }
   if (ui->widget_quit->geometry().contains(
-    event->x(), event->y()))
+    event->position().toPoint()))
   {
     close();
   }
@@ -105,6 +107,7 @@ void ribi::maziak::QtMenuDialog::keyPressEvent(QKeyEvent * event)
         case Difficulty::hard: m_difficulty = Difficulty::medium; repaint(); return;
       }
       assert(!"Should not get here"); //!OCLINT accepted idiom
+      return;
     }
     case Qt::Key_Down:
     {
@@ -115,6 +118,7 @@ void ribi::maziak::QtMenuDialog::keyPressEvent(QKeyEvent * event)
         case Difficulty::hard: return;
       }
       assert(!"Should not get here"); //!OCLINT accepted idiom
+      return;
     }
     case Qt::Key_S: OnStart(); break;
     case Qt::Key_I: OnInstructions(); break;

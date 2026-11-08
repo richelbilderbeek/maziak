@@ -4,7 +4,6 @@
 
 #include <cassert>
 
-#include <boost/timer.hpp>
 #include <QPainter>
 #include <QPaintEvent>
 #include <QTimer>

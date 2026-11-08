@@ -59,5 +59,4 @@ win32 {
 # Boost.Test
 LIBS += -lboost_unit_test_framework
 
-# Boost.Timer
 # LIBS += -lboost_timer -lboost_system
