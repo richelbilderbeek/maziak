@@ -5,7 +5,6 @@
 #include <cstdlib>
 #include <iostream>
 #include <iterator>
-#include <gsl/assert>
 #include "maziakcoordinat.h"
 #include "maziakdistancesmaze.h"
 #include "maziakhelper.h"
@@ -22,8 +21,8 @@ ribi::maziak::IntMaze::IntMaze(
   const int rng_seed
 ) : m_int_grid{CreateIntGrid(n_cols, n_rows, rng_seed)}
 {
-  Expects(IsValidSize(n_cols));
-  Expects(IsValidSize(n_rows));
+  assert(IsValidSize(n_cols));
+  assert(IsValidSize(n_rows));
 }
 
 ribi::maziak::IntMaze::IntMaze(

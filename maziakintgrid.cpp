@@ -4,7 +4,7 @@
 #include <iterator>
 #include <numeric>
 #include <random>
-#include <gsl/assert>
+#include <cassert>
 
 #include "maziakhelper.h"
 
@@ -15,8 +15,8 @@ ribi::maziak::IntGrid
   const int rng_seed
 )
 {
-  Expects(IsValidSize(n_cols));
-  Expects(IsValidSize(n_rows));
+  assert(IsValidSize(n_cols));
+  assert(IsValidSize(n_rows));
   assert(rng_seed >= 0);
   std::mt19937 rng_engine{static_cast<long unsigned int>(rng_seed)};
 

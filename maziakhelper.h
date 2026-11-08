@@ -5,7 +5,6 @@
 #include <cassert>
 #include <numeric>
 #include <vector>
-#include <gsl/assert>
 #include "maziakcoordinat.h"
 #include "maziakmazesquare.h"
 

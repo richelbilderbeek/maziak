@@ -14,7 +14,6 @@
 
 #include <memory>
 #include <boost/timer.hpp>
-#include <gsl/assert>
 //#include <QDesktopWidget>
 #include <QApplication>
 #include <QKeyEvent>

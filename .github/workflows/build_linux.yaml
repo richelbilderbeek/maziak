@@ -14,11 +14,14 @@ jobs:
       - name: Install Qt
         run: |
           sudo apt-get update
-          sudo apt-get install -y qt6-base-dev qt6-multimedia-dev libgl-dev
+          sudo apt-get install -y qt6-base-dev libgl-dev libboost-timer-dev libboost-system-dev
+
+      - name: Clone dependencies
+        run: git clone https://github.com/richelbilderbeek/RibiClasses ../RibiClasses
 
       - name: Build
         run: |
           mkdir build
           cd build
-          qmake6 ../knokfighter.pro
+          qmake6 ../MaziakDesktopQt.pro
           make -j4

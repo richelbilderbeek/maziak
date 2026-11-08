@@ -16,28 +16,30 @@ jobs:
         with:
           version: '6.8.3'
           arch: 'win64_msvc2022_64'
-          modules: 'qtmultimedia'
           cache: true
 
       - uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Clone dependencies
+        run: git clone https://github.com/richelbilderbeek/RibiClasses ../RibiClasses
 
       - name: Build
         shell: cmd
         run: |
           mkdir build
           cd build
-          qmake ..\knokfighter.pro
+          qmake ..\MaziakDesktopQt.pro
           nmake release
 
       - name: Collect the executable and the Qt libraries it needs
         shell: cmd
         run: |
-          mkdir knokfighter
-          copy build\release\knokfighter.exe knokfighter\
-          copy LICENSE knokfighter\
-          windeployqt --release --no-translations knokfighter\knokfighter.exe
+          mkdir maziak
+          copy build\release\MaziakDesktopQt.exe maziak\
+          copy LICENSE maziak\
+          windeployqt --release --no-translations maziak\MaziakDesktopQt.exe
 
       - uses: actions/upload-artifact@v4
         with:
-          name: knokfighter_windows
-          path: knokfighter
+          name: maziak_windows
+          path: maziak

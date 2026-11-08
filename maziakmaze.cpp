@@ -7,8 +7,6 @@
 
 // In a terminal, when in the Maziak folder do:
 //
-// git clone https://github.com/microsoft/GSL ../
-#include <gsl/assert>
 
 #include "maziakhelper.h"
 #include "maziakintmaze.h"
@@ -19,8 +17,8 @@ ribi::maziak::Maze::Maze(
   const int rng_seed
 ) : m_maze{CreatePopulatedMaze(CreateIntMaze(n_cols, n_rows, rng_seed), rng_seed)}
 {
-  Ensures(FindExit(*this).first  >= 0);
-  Ensures(FindStart(*this).first >= 0);
+  assert(FindExit(*this).first  >= 0);
+  assert(FindStart(*this).first >= 0);
 }
 
 void ribi::maziak::Maze::MakeEnemiesMove(
@@ -327,7 +325,7 @@ ribi::maziak::Coordinat ribi::maziak::FindStart(const Maze& m)
 ribi::maziak::MazeSquare ribi::maziak::Maze::Get(
   const Coordinat c) const
 {
-  Expects(CanGet(c));
+  assert(CanGet(c));
   const auto x = get_x(c);
   const auto y = get_y(c);
   return m_maze[y][x];
@@ -346,11 +344,11 @@ int ribi::maziak::get_n_rows(const Maze& m) noexcept
 
 void ribi::maziak::Maze::Set(const Coordinat c, const MazeSquare s)
 {
-  Expects(CanSet(c));
+  assert(CanSet(c));
   const auto x = get_x(c);
   const auto y = get_y(c);
   m_maze[y][x] = s;
-  Ensures(Get(c) == s);
+  assert(Get(c) == s);
 }
 
 std::ostream& ribi::maziak::operator<<(

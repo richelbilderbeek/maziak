@@ -14,7 +14,6 @@ build_script:
   # Build prerequisites
   - cd ..
   - git clone https://github.com/richelbilderbeek/RibiClasses
-  - git clone https://github.com/Microsoft/GSL
   - dir
   - cd Maziak
   # Console test

@@ -4,7 +4,6 @@
 #include <cassert>
 #include <iostream>
 #include <stdexcept>
-#include <gsl/assert>
 #include <QPixmap>
 #include <QImage>
 #include "maziakhelper.h"
