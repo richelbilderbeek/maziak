@@ -41,4 +41,5 @@ HEADERS  += \
     $$PWD/maziakintgrid.h \
     $$PWD/maziakgame.h \
     $$PWD/maziakcoordinat.h \
-    $$PWD/maziakplayer.h
+    $$PWD/maziakplayer.h \
+    $$PWD/maziakstopwatch.h

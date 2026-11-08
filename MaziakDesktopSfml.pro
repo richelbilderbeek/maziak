@@ -79,15 +79,6 @@ QMAKE_CXXFLAGS += -Wno-unused-variable
 QMAKE_CXXFLAGS += -Wno-unused-variable
 
 ################################################################################
-# RibiClasses
-################################################################################
-
-include(../RibiClasses/CppAbout/CppAbout.pri)
-include(../RibiClasses/CppHelp/CppHelp.pri)
-include(../RibiClasses/CppMenuDialog/CppMenuDialog.pri)
-include(../RibiClasses/CppStopwatch/CppStopwatch.pri)
-
-################################################################################
 # SFML
 ################################################################################
 LIBS += -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio

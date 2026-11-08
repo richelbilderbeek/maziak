@@ -1,9 +1,3 @@
-include(../RibiClasses/CppAbout/CppAbout.pri)
-include(../RibiClasses/CppHelp/CppHelp.pri)
-include(../RibiClasses/CppMenuDialog/CppMenuDialog.pri)
-include(../RibiClasses/CppQtAboutDialog/CppQtAboutDialog.pri)
-include(../RibiClasses/CppQtHideAndShowDialog/CppQtHideAndShowDialog.pri)
-include(../RibiClasses/CppStopwatch/CppStopwatch.pri)
 include(MaziakConsole.pri)
 include(MaziakDesktopQt.pri)
 

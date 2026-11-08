@@ -9,7 +9,7 @@
 
 
 #include <boost/shared_ptr.hpp>
-#include "qthideandshowdialog.h"
+#include <QDialog>
 #include "maziakmazesquare.h"
 #include "maziaksprite.h"
 #include "maziakgame.h"
@@ -18,7 +18,7 @@
 #include "qtmaziaksprites.h"
 #include "maziakplayerdirection.h"
 #include "maziakplayermove.h"
-#include "stopwatch.h"
+#include "maziakstopwatch.h"
 
 
 struct QPixmap;

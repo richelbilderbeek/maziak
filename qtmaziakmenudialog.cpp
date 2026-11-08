@@ -11,12 +11,10 @@
 //#include <QDesktopWidget>
 #include <QKeyEvent>
 #include <QPainter>
+#include <QMessageBox>
 #include <QMouseEvent>
 
-#include "about.h"
 #include "maziakmenudialog.h"
-#include "qtaboutdialog.h"
-#include "qtmaziakcanvas.h"
 #include "qtmaziakinstructionsdialog.h"
 #include "maziakgame.h"
 #include "qtmaziakdisplay.h"
@@ -246,8 +244,9 @@ int ribi::maziak::QtMenuDialog::GetMazeSize() const
 void ribi::maziak::QtMenuDialog::OnAbout()
 {
   this->hide();
-  About a = MenuDialog().GetAbout();
-  std::unique_ptr<QtAboutDialog> d(new QtAboutDialog(a));
+  std::unique_ptr<QMessageBox> d(new QMessageBox);
+  d->setWindowTitle("About Maziak");
+  d->setText(QString::fromStdString(MenuDialog().GetAbout()));
   d->setStyleSheet(
     "background: url(:/maziak/pics/MaziakBackground.png) repeat center center fixed;"
   );

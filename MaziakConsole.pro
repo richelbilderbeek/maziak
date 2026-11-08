@@ -1,7 +1,3 @@
-include(../RibiClasses/CppAbout/CppAbout.pri)
-include(../RibiClasses/CppHelp/CppHelp.pri)
-include(../RibiClasses/CppMenuDialog/CppMenuDialog.pri)
-
 #Specific, console
 include(MaziakConsole.pri)
 

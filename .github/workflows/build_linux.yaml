@@ -16,9 +16,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y qt6-base-dev libgl-dev libboost-timer-dev libboost-system-dev
 
-      - name: Clone dependencies
-        run: git clone https://github.com/richelbilderbeek/RibiClasses ../RibiClasses
-
       - name: Build
         run: |
           mkdir build

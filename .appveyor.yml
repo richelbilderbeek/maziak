@@ -13,7 +13,6 @@ build_script:
   - g++ -v
   # Build prerequisites
   - cd ..
-  - git clone https://github.com/richelbilderbeek/RibiClasses
   - dir
   - cd Maziak
   # Console test

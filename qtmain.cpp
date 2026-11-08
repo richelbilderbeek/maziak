@@ -5,7 +5,6 @@
 #include "qtmaziakmenudialog.h"
 
 #include "qtmaziakinstructionsdialog.h"
-#include "qtaboutdialog.h"
 #include "maziakintgrid.h"
 #include "maziakmenudialog.h"
 #include "qtmaziakdisplay.h"

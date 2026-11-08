@@ -13,47 +13,65 @@ ribi::maziak::MenuDialog::MenuDialog()
 
 }
 
-int ribi::maziak::MenuDialog::ExecuteSpecific(const std::vector<std::string>& argv) noexcept
+std::vector<std::string> ribi::maziak::MenuDialog::ConvertArguments(
+  const int argc, const char * const argv[]) noexcept
+{
+  return std::vector<std::string>(argv, argv + argc);
+}
+
+int ribi::maziak::MenuDialog::Execute(const std::vector<std::string>& argv) noexcept
 {
   const int argc = static_cast<int>(argv.size());
-  if (argc != 1)
+  if (argc == 1)
   {
-    std::cout << GetHelp() << '\n';
+    Terminal terminal{CreateTestGame1()};
+    terminal.Execute();
     return 0;
   }
-
-  Terminal terminal{CreateTestGame1()};
-  terminal.Execute();
+  const std::string s{argc == 2 ? argv[1] : ""};
+  if (s == "--about" || s == "-a")
+  {
+    std::cout << GetAbout() << '\n';
+  }
+  else if (s == "--history" || s == "-i")
+  {
+    for (const auto& line: GetVersionHistory()) std::cout << line << '\n';
+  }
+  else if (s == "--version" || s == "-v")
+  {
+    std::cout << GetVersion() << '\n';
+  }
+  else
+  {
+    std::cout << GetHelp() << '\n';
+  }
   return 0;
 }
 
-ribi::About ribi::maziak::MenuDialog::GetAbout() const noexcept
+std::string ribi::maziak::MenuDialog::GetAbout() const noexcept
 {
-  About a(
-    "Richel Bilderbeek",
-    "Maziak",
-    "a simple maze game",
-    "March 12th 2017",
-    "2007-2017",
-    "https://github.com/richelbilderbeek/Maziak",
-    GetVersion(),
-    GetVersionHistory()
-  );
-  return a;
+  return
+    "Maziak, version " + GetVersion() + "\n"
+    "a simple maze game\n"
+    "Copyright (C) 2007-2017 Richel Bilderbeek\n"
+    "\n"
+    "Maziak can be downloaded from https://github.com/richelbilderbeek/maziak\n"
+    "Licenced under GPL 3.0"
+  ;
 }
 
-ribi::Help ribi::maziak::MenuDialog::GetHelp() const noexcept
+std::string ribi::maziak::MenuDialog::GetHelp() const noexcept
 {
-  return Help(
-    this->GetAbout().GetFileTitle(),
-    this->GetAbout().GetFileDescription(),
-    {
-
-    },
-    {
-
-    }
-  );
+  return
+    "Maziak, a simple maze game\n"
+    "\n"
+    "Usage:\n"
+    "  maziak            play the game\n"
+    "  maziak --about    show information about the program\n"
+    "  maziak --help     show this help\n"
+    "  maziak --history  show the version history\n"
+    "  maziak --version  show the version"
+  ;
 }
 
 std::string ribi::maziak::MenuDialog::GetVersion() const noexcept

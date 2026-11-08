@@ -20,9 +20,6 @@ jobs:
 
       - uses: ilammy/msvc-dev-cmd@v1
 
-      - name: Clone dependencies
-        run: git clone https://github.com/richelbilderbeek/RibiClasses ../RibiClasses
-
       - name: Build
         shell: cmd
         run: |

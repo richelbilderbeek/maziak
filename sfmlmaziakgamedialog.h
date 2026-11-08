@@ -2,7 +2,7 @@
 #define SFMLMAZIAKGAMEDIALOG_H
 
 #include "maziakgame.h"
-#include "stopwatch.h"
+#include "maziakstopwatch.h"
 #include <SFML/Graphics.hpp>
 
 namespace ribi {
