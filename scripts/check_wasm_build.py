@@ -28,12 +28,12 @@ problems = []
 def n_colors(png_bytes):
     """Count the number of different colors in a screenshot."""
     image = Image.open(io.BytesIO(png_bytes)).convert("RGB")
-    return len(set(image.getdata()))
+    return len(image.getcolors(maxcolors=1 << 24))
 
 
 with sync_playwright() as p:
     browser = p.chromium.launch(channel="chrome", args=["--use-gl=swiftshader", "--enable-unsafe-swiftshader"])
-    page = browser.new_page(viewport={"width": 800, "height": 600})
+    page = browser.new_page(viewport={"width": 800, "height": 720})
     page.on("console", lambda m: print(f"console.{m.type}: {m.text}"))
     page.on("pageerror", lambda e: problems.append(f"page error: {e}"))
     page.goto("http://127.0.0.1:8123/index.html")
@@ -47,11 +47,12 @@ with sync_playwright() as p:
         problems.append("the menu screenshot is (nearly) blank")
 
     # Start a game
-    page.mouse.click(400, 300)
+    page.mouse.click(400, 360)
     page.keyboard.press("s")
     page.wait_for_timeout(5_000)
     maze = page.screenshot(path="maze.png")
     print(f"Maze screenshot has {n_colors(maze)} colors")
+    # The maze only uses a few colors, so compare with the menu instead
     if maze == menu:
         problems.append("pressing 'S' did not change the screen")
 
