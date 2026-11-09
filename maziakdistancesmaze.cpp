@@ -41,7 +41,7 @@ std::vector<std::vector<int>> ribi::maziak::CalculateDistances(
   assert(maze.Get(c) == 0); //Assume starting point is no wall
 
   const int n_rows = get_n_rows(maze);
-  const int n_cols = get_n_rows(maze);
+  const int n_cols = get_n_cols(maze);
   const int area = n_rows * n_cols;
   const int maxDistance = area;
   std::vector<std::vector<int>> distances(n_rows, std::vector<int>(n_cols, maxDistance));
@@ -60,12 +60,13 @@ std::vector<std::vector<int>> ribi::maziak::CalculateDistances(
 
       for (const auto& p: found)
       {
-        const auto adjacent = get_adjacent_4(c);
+        const auto adjacent = get_adjacent_4(p);
         for (const auto& d: adjacent)
         {
           //No wall and
           //not already in solution
-          if (maze.Get(d) == 0
+          if (maze.CanGet(d)
+            && maze.Get(d) == 0
             && distances[get_y(d)][get_x(d)] == maxDistance)
 
           {
