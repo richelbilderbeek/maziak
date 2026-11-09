@@ -18,8 +18,8 @@
 #include "maziakstopwatch.h"
 
 
-struct QPixmap;
-struct QTimer;
+class QPixmap;
+class QTimer;
 
 namespace ribi {
 namespace maziak {

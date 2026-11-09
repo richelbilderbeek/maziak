@@ -10,7 +10,7 @@
 #include "maziaksprite.h"
 
 
-struct QPixmap;
+class QPixmap;
 
 namespace ribi {
 namespace maziak {

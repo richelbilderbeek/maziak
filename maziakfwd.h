@@ -5,10 +5,10 @@ namespace ribi {
 namespace maziak {
 
 class DistancesMaze;
-class IntMaze;
-class Game;
+struct IntMaze;
+struct Game;
 class Maze;
-class Sprites;
+struct Sprites;
 class SolutionMaze;
 
 } //~namespace maziak

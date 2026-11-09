@@ -4,9 +4,9 @@
 #include <QDialog>
 #include "maziakdifficulty.h"
 
-struct QKeyPressEvent;
-struct QMouseEvent;
-struct QPaintEvent;
+class QKeyEvent;
+class QMouseEvent;
+class QPaintEvent;
 
 namespace Ui {
   class QtMaziakMenuDialog;

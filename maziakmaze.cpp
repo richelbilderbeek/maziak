@@ -173,7 +173,7 @@ std::vector<std::vector<ribi::maziak::MazeSquare>> ribi::maziak::CreatePopulated
   {
     //Set a minimum distance for the player to travel
     //while (1)
-    for (int i=0; ;++i)
+    while (true)
     {
       const double x1 = static_cast<double>(dead_ends[0].first );
       const double y1 = static_cast<double>(dead_ends[0].second);
