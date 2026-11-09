@@ -10,5 +10,5 @@ and one of
 
 ![Instructions](pics/Instructions.png)
 
- * [Video of Maziak at 2017-04-02 (zipped)](pics/20170402.zip)
- 
+* [Video of Maziak at 2017-04-02 (zipped)](pics/20170402.zip)
+
