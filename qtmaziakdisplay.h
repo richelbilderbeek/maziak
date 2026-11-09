@@ -6,9 +6,6 @@
 #include <set>
 #include <vector>
 
-
-
-#include <boost/shared_ptr.hpp>
 #include <QDialog>
 #include "maziakmazesquare.h"
 #include "maziaksprite.h"

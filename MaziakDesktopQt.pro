@@ -16,31 +16,36 @@ CONFIG += debug_and_release
 
 # In release mode, define NDEBUG
 CONFIG(release, debug|release) {
-
   DEFINES += NDEBUG
-
-  # gprof
-  QMAKE_CXXFLAGS += -pg
-  QMAKE_LFLAGS += -pg
-
 }
 
-# In debug mode, turn on gcov and UBSAN
-CONFIG(debug, debug|release) {
+# Profiling and coverage, only for desktop builds
+!wasm {
+  CONFIG(release, debug|release) {
 
-  # gcov
-  QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage
-  LIBS += -lgcov
+    # gprof
+    QMAKE_CXXFLAGS += -pg
+    QMAKE_LFLAGS += -pg
 
-  # UBSAN
-  QMAKE_CXXFLAGS += -fsanitize=undefined
-  QMAKE_LFLAGS += -fsanitize=undefined
-  LIBS += -lubsan
+  }
 
-  # gprof
-  QMAKE_CXXFLAGS += -pg
-  QMAKE_LFLAGS += -pg
+  # In debug mode, turn on gcov and UBSAN
+  CONFIG(debug, debug|release) {
 
+    # gcov
+    QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage
+    LIBS += -lgcov
+
+    # UBSAN
+    QMAKE_CXXFLAGS += -fsanitize=undefined
+    QMAKE_LFLAGS += -fsanitize=undefined
+    LIBS += -lubsan
+
+    # gprof
+    QMAKE_CXXFLAGS += -pg
+    QMAKE_LFLAGS += -pg
+
+  }
 }
 
 # Qt
@@ -55,5 +60,12 @@ QMAKE_CXXFLAGS += -Wno-unused-variable
 #/usr/include/boost/math/constants/constants.hpp:277: error: unable to find numeric literal operator 'operator""Q'
 #   BOOST_DEFINE_MATH_CONSTANT(half, 5.000000000000000000000000000000000000e-01, "5.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e-01")
 #   ^
-QMAKE_CXXFLAGS += -fext-numeric-literals
+!wasm {
+  QMAKE_CXXFLAGS += -fext-numeric-literals
+}
+
+# WebAssembly: allow QDialog::exec(), which needs a nested event loop
+wasm {
+  QMAKE_LFLAGS += -sASYNCIFY -Os
+}
 

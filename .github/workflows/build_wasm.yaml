@@ -1,0 +1,50 @@
+# Build the Qt version of the game for WebAssembly,
+# so that it can be played in a web browser.
+# The result is uploaded as the 'maziak_wasm' workflow artifact,
+# which the website workflow puts on the 'Play' page.
+name: Build for WebAssembly
+
+on:
+  push:
+  pull_request:
+  workflow_call:
+
+jobs:
+  build_wasm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      # Qt 6.8 needs Emscripten 3.1.56,
+      # see https://doc.qt.io/qt-6/wasm.html#installing-emscripten
+      - uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: 3.1.56
+
+      - uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.8.3'
+          host: 'all_os'
+          target: 'wasm'
+          arch: 'wasm_singlethread'
+          cache: true
+
+      - name: Build
+        run: |
+          mkdir build
+          cd build
+          qmake ../MaziakDesktopQt.pro CONFIG+=release CONFIG-=debug_and_release
+          make -j4
+
+      - name: Collect the files needed to play in a browser
+        run: |
+          mkdir maziak_wasm
+          cp build/MaziakDesktopQt.html maziak_wasm/index.html
+          cp build/MaziakDesktopQt.js build/MaziakDesktopQt.wasm build/qtloader.js maziak_wasm/
+          cp build/qtlogo.svg maziak_wasm/ || true
+          ls -l maziak_wasm
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: maziak_wasm
+          path: maziak_wasm

@@ -3,7 +3,6 @@
 #include <cassert>
 #include <iostream>
 #include <sstream>
-#include <boost/range/algorithm/remove.hpp>
 #include "maziakkey.h"
 #include "maziakmaze.h"
 #include "maziakintmaze.h"

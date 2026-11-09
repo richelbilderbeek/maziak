@@ -8,8 +8,14 @@ on:
       - main
     paths:
       - .github/workflows/create_zensical_website.yaml
+      - .github/workflows/build_wasm.yaml
       - 'docs/**'
       - zensical.toml
+      - '*.cpp'
+      - '*.h'
+      - '*.pri'
+      - '*.pro'
+      - '*.qrc'
 
 permissions:
   contents: read
@@ -17,7 +23,12 @@ permissions:
   id-token: write
 
 jobs:
+  # The game, built for WebAssembly, to be played on the 'Play' page
+  build_wasm:
+    uses: ./.github/workflows/build_wasm.yaml
+
   create_zensical_website:
+    needs: build_wasm
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -30,6 +41,10 @@ jobs:
           python-version: 3.x
       - run: pip install zensical
       - run: zensical build --clean --strict
+      - uses: actions/download-artifact@v4
+        with:
+          name: maziak_wasm
+          path: site/game
       - uses: actions/upload-pages-artifact@v4
         with:
           path: site
