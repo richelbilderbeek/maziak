@@ -1,0 +1,8 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^game/index.html$"
+    }
+  ],
+  "aliveStatusCodes": [200, 206, 429]
+}

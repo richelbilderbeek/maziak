@@ -8,6 +8,6 @@ Click the game to give it focus, then use the keyboard:
 
 <!-- markdownlint-disable MD033 --><!-- Need HTML here -->
 
-<iframe src="../game/index.html" width="100%" height="720" scrolling="no" style="border: 0"></iframe>
+<iframe src="game/index.html" width="100%" height="720" scrolling="no" style="border: 0"></iframe>
 
 <!-- markdownlint-enable MD033 -->

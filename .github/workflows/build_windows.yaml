@@ -12,13 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      # Use MinGW (GCC), as the project uses GCC compiler flags
       - uses: jurplel/install-qt-action@v4
         with:
           version: '6.8.3'
-          arch: 'win64_msvc2022_64'
+          arch: 'win64_mingw'
+          tools: 'tools_mingw1310'
           cache: true
-
-      - uses: ilammy/msvc-dev-cmd@v1
 
       - name: Build
         shell: cmd
@@ -26,7 +26,7 @@ jobs:
           mkdir build
           cd build
           qmake ..\MaziakDesktopQt.pro
-          nmake release
+          mingw32-make -j4 release
 
       - name: Collect the executable and the Qt libraries it needs
         shell: cmd

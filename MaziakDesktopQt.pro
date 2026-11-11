@@ -19,8 +19,8 @@ CONFIG(release, debug|release) {
   DEFINES += NDEBUG
 }
 
-# Profiling and coverage, only for desktop builds
-!wasm {
+# Profiling and coverage, only for desktop builds with GCC on Linux
+!wasm:!win32 {
   CONFIG(release, debug|release) {
 
     # gprof
