@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     QTimer::singleShot(10000, &d, SLOT(close()));
     d.showFullScreen();
     d.exec();
-    a.exit(0);
+    return 0;
   }
   else
   {
