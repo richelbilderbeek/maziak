@@ -1,5 +1,7 @@
 # Maziak
 
+[![codecov](https://codecov.io/gh/richelbilderbeek/maziak/branch/main/graph/badge.svg)](https://codecov.io/gh/richelbilderbeek/maziak)
+
 - [Go to the nicely rendered website](https://richelbilderbeek.github.io/maziak/).
 
 The game is built by continuous integration into the folder `docs/game`,
